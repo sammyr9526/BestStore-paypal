@@ -6,6 +6,6 @@ export const PAYPAL_API_SECRET =
 
 export const PAYPAL_API_URL = "https://api.sandbox.paypal.com";
 
-export const HOST = "https://beststore-paypal.com/";
+export const HOST = "https://beststore-paypal.herokuapp.com";
 
 export const PORT = 3000;
