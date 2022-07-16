@@ -6,6 +6,6 @@ export const PAYPAL_API_SECRET =
 
 export const PAYPAL_API_URL = "https://api.sandbox.paypal.com";
 
-export const HOST = "http://localhost:3000";
+export const HOST = "https://beststore-paypal.com/";
 
 export const PORT = 3000;
