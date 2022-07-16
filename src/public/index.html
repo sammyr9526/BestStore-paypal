@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Best Store</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">Best Store</a>
+      </div>
+    </nav>
+
+    <div class="col-sm-12 mt-5">
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="card text-center w-75 ms-5 border-primary mb-3">
+            <div class="card-body">
+              <img
+                class="img-fluid mb-2"
+                style="height: 250px; width: 250px"
+                src="https://www.estilos.com.pe/159839-home_default/asus-laptop-14-ascel01-celeron-n4020-ram-4gb-128-ssd-w10.jpg"
+                alt="asus-laptop"
+              />
+              <p>Price 1000$</p>
+              <p>stock 5</p>
+              <button id="checkout" class="btn btn-primary">Buy</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-4">
+          <div class="card text-center w-75 ms-5 border-primary mb-3">
+            <div class="card-body">
+              <img
+                class="img-fluid mb-2"
+                style="height: 250px; width: 300px"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoWpMqCujJRVGdL1jeKkMHQY6mLdda7vuoVg&usqp=CAU"
+                alt="mouse_red_dragon"
+              />
+              <p>Price 200$</p>
+              <p>stock 5</p>
+              <button id="checkout2" class="btn btn-primary">Buy</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-4">
+          <div class="card text-center w-75 ms-5 border-primary mb-3">
+            <div class="card-body">
+              <img
+                class="img-fluid mb-2"
+                style="height: 250px; width: 300px"
+                src="https://plazavea.vteximg.com.br/arquivos/ids/305049-1000-1000/image-ee0aa0c4d5a848e8a84a2395ff7df75f.jpg"
+                alt="razor_keyborad"
+              />
+              <p>Price 400$</p>
+              <p>stock 5</p>
+              <button id="checkout3" class="btn btn-primary">Buy</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- product info -->
+
+    <script>
+      const checkout = document.getElementById("checkout");
+
+      checkout.addEventListener("click", async function () {
+        const response = await fetch("/create-order", {
+          method: "POST",
+        });
+        const data = await response.json();
+        console.log(data);
+
+        window.location.href = data.links[1].href;
+      });
+
+      const checkout2 = document.getElementById("checkout2");
+
+      checkout2.addEventListener("click", async function () {
+        const response = await fetch("/create-order2", {
+          method: "POST",
+        });
+        const data = await response.json();
+        console.log(data);
+
+        window.location.href = data.links[1].href;
+      });
+
+      const checkout3 = document.getElementById("checkout3");
+
+      checkout3.addEventListener("click", async function () {
+        const response = await fetch("/create-order3", {
+          method: "POST",
+        });
+        const data = await response.json();
+        console.log(data);
+
+        window.location.href = data.links[1].href;
+      });
+    </script>
+  </body>
+</html>
